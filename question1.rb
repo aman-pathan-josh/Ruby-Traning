@@ -1,5 +1,5 @@
 puts "Enter a number:"
-input_number = gets.chomp.to_i
+input_number = gets.to_i
 
 flag = false
 
