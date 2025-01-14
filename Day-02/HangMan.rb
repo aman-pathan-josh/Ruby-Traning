@@ -1,3 +1,6 @@
+# Assignment: Create a hangman game
+
+
 def print_word(guessed_word_array)
   current_word = guessed_word_array.join(separator = " ")
 
