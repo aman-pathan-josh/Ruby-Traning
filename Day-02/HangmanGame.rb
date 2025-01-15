@@ -135,7 +135,7 @@ while level <= 5
       print "\nDo you want to Continue Game [Yes/No]?\n"
       choice = gets.chomp.downcase
     end
-    else
+  else
     print "\nThank You for playing the Hangman Game!\n"
     break  
   end
