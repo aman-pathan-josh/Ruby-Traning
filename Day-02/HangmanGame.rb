@@ -13,11 +13,11 @@ print "\n There are 5 levels and each level has score 10\n"
 
 category_list = ['Animals','Birds','Fruits','Countries','Body Parts']
 
-$win_flag = false
 
 $score = 0
 
 def hangman_game(random_int)
+  win_flag = false
   words_hash = {
     0 => ['lion', 'tiger','kangaroo','panda', 'bear', 'elephant', 'monkey'],
     1 => ['flamingo','peacock','eagle','crow','parrot','owl'],
@@ -43,7 +43,7 @@ def hangman_game(random_int)
     user_guesses = []
 
     if letter_count == word_length
-      $win_flag = true
+      win_flag = true
       break
     end
     # print "\n.....................................\n"
@@ -88,7 +88,7 @@ def hangman_game(random_int)
     end
   end
 
-  if $win_flag
+  if win_flag
     print "\nCongratulations! You have guessed the right word!\n\n"
     print "\n\t #{print_word(guessed_word_array)}\n"
     $score += 10
