@@ -34,9 +34,14 @@ def hangman_game(random_int)
   total_chances = 5
   letter_count = 0
 
+
+
   guessed_word_array = Array.new(word_length,'_')
 
   while total_chances <= 5 && total_chances > 0
+
+    user_guesses = []
+
     if letter_count == word_length
       $win_flag = true
       break
@@ -47,11 +52,12 @@ def hangman_game(random_int)
     print "\n\t    #{print_word(guessed_word_array)}\n"
     
     print "\tGuess: "
-    user_inp = gets.chomp
+    user_inp = gets.chomp.downcase
+
     guess_flag = false
 
+    
     for i in 0..word_length
-
       if word_to_guess[i] == user_inp && guessed_word_array[i] == '_'
         guessed_word_array[i] = user_inp.upcase
         letter_count += 1
@@ -61,14 +67,24 @@ def hangman_game(random_int)
         guess_flag = false
       end
     end
-  
+
+    if guessed_word_array.include?(user_inp.upcase) && guess_flag == false
+      print "\n.....................................\n"
+      print "\n\tThis letter is already guessed!\n"
+      next
+    end
+
     if guess_flag
       print "\n.....................................\n"
       print "\n\tYou guessed it right!\n\n"
     else
       print "\n.....................................\n"
-      print "\n\tOops!..Wrong Guess!\n\n"
-      total_chances -= 1
+      if user_inp.length > 1
+        print "\n   Enter single character at a time!\n\n"
+      else
+        print "\n\tOops!..Wrong Guess!\n\n"
+        total_chances -= 1
+      end
     end
   end
 
@@ -91,25 +107,42 @@ end
 
 level = 1
 
+choice = 'yes'
+
 while level <= 5
-  print "\n.....................................\n"
-  print "\n\t   Level: #{level}\n\n"
-  print ".....................................\n"
 
-  random_int = rand(5)
-  
-  category = category_list[random_int]
+  if choice == 'yes' || choice == 'y'
 
-  print "\n\tCategory: #{category}\n\n"
+    print "\n.....................................\n"
+    print "\n\t   Level: #{level}\n\n"
+    print ".....................................\n"
 
-  level_check = hangman_game(random_int)
-  if level_check == 0
-    break
+    random_int = rand(5)
+    
+    category = category_list[random_int]
+
+    print "\n\tCategory: #{category}\n\n"
+
+
+    level_check = -1
+
+    level_check = hangman_game(random_int)
+    if level_check == 0
+      break
+    end
+    level+=1
+    if level<5
+      print "\nDo you want to Continue Game [Yes/No]?\n"
+      choice = gets.chomp.downcase
+    end
+    else
+    print "\nThank You for playing the Hangman Game!\n"
+    break  
   end
-  level+=1
 end
 
 
 if level > 5
   print "\n Congratulations! You have cleared all the levels!\n\n"
 end
+
