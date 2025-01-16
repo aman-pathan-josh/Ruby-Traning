@@ -146,3 +146,141 @@ if level > 5
   print "\n Congratulations! You have cleared all the levels!\n\n"
 end
 
+
+
+## Output
+
+
+# Welcome to HangMan Game!
+
+
+# There are 5 levels and each level has score 10
+
+# .....................................
+
+#           Level: 1
+
+# .....................................
+
+#        Category: Birds
+
+
+#        Chances Left: 5
+
+#        _ _ _ _ _ _
+
+           
+#        Guess: a
+
+# .....................................
+
+#        You guessed it right!
+
+
+#        Chances Left: 5
+
+#        _ A _ _ _ _
+
+           
+#        Guess: i
+
+# .....................................
+
+#        Oops!..Wrong Guess!
+
+
+#        Chances Left: 4
+
+#        _ A _ _ _ _
+
+           
+#        Guess: e
+
+# .....................................
+
+#        Oops!..Wrong Guess!
+
+
+#        Chances Left: 3
+
+#        _ A _ _ _ _
+
+           
+#        Guess: p
+
+# .....................................
+
+#        You guessed it right!
+
+
+#        Chances Left: 3
+
+#        P A _ _ _ _
+
+           
+#        Guess: r
+
+# .....................................
+
+#        You guessed it right!
+
+
+#        Chances Left: 3
+
+#        P A R _ _ _
+
+           
+#        Guess: r
+
+# .....................................
+
+#        You guessed it right!
+
+
+#        Chances Left: 3
+
+#        P A R R _ _
+
+           
+#        Guess: o
+
+# .....................................
+
+#        You guessed it right!
+
+
+#        Chances Left: 3
+
+#        P A R R O _
+
+           
+#        Guess: r
+
+# .....................................
+
+#        This letter is already guessed!
+
+#        Chances Left: 3
+
+#        P A R R O _
+
+           
+#        Guess: t
+
+# .....................................
+
+#        You guessed it right!
+
+
+# Congratulations! You have guessed the right word!
+
+
+#        P A R R O T
+
+
+        
+#         Your Score: 10
+# ......................................
+
+# Do you want to Continue Game [Yes/No]?
+# yes
