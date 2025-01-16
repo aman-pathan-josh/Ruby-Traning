@@ -1,6 +1,5 @@
 ## Question 4: Regex for mobile number, email address, name, gender(M / F) and  amount
 
-```ruby
 email_regex = /[A-Za-z0-9._]+@[A-Za-z0-9.-]+\.[A-Za-z]/
 
 mobile_regex = /\d{10}/
@@ -16,7 +15,7 @@ puts "Enter Name:"
 
 name = gets.chomp
 
-puts name.match?(name_regex) ? "Name number is Valid" : "Name is Invalid!"
+puts name.match?(name_regex) ? "Name is Valid" : "Name is Invalid!"
 
 puts "Enter Gender:"
 
@@ -44,8 +43,23 @@ puts "Enter Amount:"
 amount = gets.chomp
 
 puts amount.match?(amount_regex) ? "Amount is Valid" : "Amount is Invalid!"
-```
+
 
 ## Output
 
-![alt text](<Screenshot from 2025-01-15 16-56-38.png>)
+# Enter Name:
+# Aman Pathan
+# Name is Valid
+# Enter Gender:
+# M
+# Gender is Valid
+# Enter an email:
+# amanpathan@gmail.com
+# Email is Valid
+# Enter mobile number:
+# 9875674567
+# Mobile number is Valid
+# Enter Amount:
+# 10000
+# Amount is Valid
+

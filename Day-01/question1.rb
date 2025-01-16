@@ -1,6 +1,5 @@
 ## Question 1: Write a program to display number is prime or not
 
-```ruby
 puts "Enter a number:"
 input_number = gets.to_i
 
@@ -22,8 +21,19 @@ else
     puts "#{input_number} is a prime number"
   end
 end
-```
 
-## Output
 
-![alt text](<Screenshot from 2025-01-15 16-04-55.png>)
+## Input: 22
+## Output : 22 is not a prime number
+
+
+## Input: 5
+## Output : 5 is a prime number
+
+
+## Input: 188
+## Output : 188 is not a prime number
+
+
+## Input: 11
+## Output : 11 is a prime number

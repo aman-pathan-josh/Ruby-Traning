@@ -6,7 +6,7 @@
 ### Class D IP address : 234.16.12.34 to 239.16.12.34.
 ### Class E IP address : 240.16.12.34 to 255.16.12.34.
 
-```ruby
+
 ip_address_regex = /^([0-9]{1,3}[.][0-9]{1,3}[.][0-9]{1,3}[.][0-9]{1,3})$/
 
 puts "Enter the IP Address :"
@@ -33,8 +33,14 @@ if input_string.match(ip_address_regex)
 else
     puts "Not a valid IP address"
 end
-```
+
 
 ## Output
 
-![alt text](<Screenshot from 2025-01-15 16-02-46.png>)
+# Enter the IP Address :
+# 192.168.1.1
+# Class C
+
+# Enter the IP Address :
+# 162.10.1.0
+# Class B

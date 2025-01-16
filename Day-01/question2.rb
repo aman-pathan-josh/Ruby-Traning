@@ -6,7 +6,6 @@
 ### if grade is between otherwise return college
 
 
-```ruby
 puts "Enter a number:"
 
 grade = gets.to_i
@@ -22,8 +21,20 @@ when 9..12
 else
   puts "College"
 end
-```
 
-## Output
 
-![alt text](<Screenshot from 2025-01-15 16-05-46.png>)
+
+## Input: 3
+## Output: Elementary
+
+## Input: 7
+## Output: Middle School
+
+## Input: 8
+## Output: Middle School
+
+## Input: 10
+## Output: High School
+
+## Input: 14
+## Output: College
