@@ -1,14 +1,14 @@
 ## Question 4: Regex for mobile number, email address, name, gender(M / F) and  amount
 
-email_regex = /[A-Za-z0-9._]+@[A-Za-z0-9.-]+\.[A-Za-z]/
+email_regex = /^[A-Za-z0-9._-]+@[A-Za-z0-9.-]+.[A-Za-z]{2,}$/
 
-mobile_regex = /\d{10}/
+mobile_regex = /^\d{10}$/
 
-name_regex = /[A-Za-z]/
+name_regex = /^[A-Za-z\s]+$/
 
-gender_regex = /[MmFf]/
+gender_regex = /^[MmFf]$/
 
-amount_regex = /\d+/
+amount_regex = /^\d+$/
 
 
 puts "Enter Name:"

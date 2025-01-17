@@ -8,10 +8,19 @@
 
 puts "Enter a number:"
 
-grade = gets.to_i
+grade = gets.chomp
+
+if /^\d+$/ =~ grade
+  grade = grade.to_i
+else
+  puts "Enter Valid Input:"
+  grade = gets.chomp.to_i
+end
 
 case grade
 
+when 0
+  puts "Invalid Input"
 when 1..5
   puts "Elementary"
 when 6..8

@@ -1,14 +1,22 @@
 ## Question 1: Write a program to display number is prime or not
 
 puts "Enter a number:"
-input_number = gets.to_i
+input_number = gets.chomp
+
+
+if /^\d+$/ =~ input_number
+  input_number = input_number.to_i
+else
+  puts "Invalid Input"
+  input_number = gets.chomp.to_i
+end
 
 flag = false
 
-if input_number == 0 || input_number == 1
+if input_number <= 1
   puts "#{input_number} is not a prime number"
 else
-  for factor in 2..input_number-1 do
+  (2..Math.sqrt(input_number)).each do |factor|
     if input_number % factor == 0
       flag = true
       break
