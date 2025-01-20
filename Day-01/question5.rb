@@ -6,13 +6,6 @@
 ### Class D IP address : 234.16.12.34 to 239.16.12.34.
 ### Class E IP address : 240.16.12.34 to 255.16.12.34.
 
-def is_in_range?(field)
-    if field = 0..255
-        return true
-    else
-        return false
-    end
-end
 
 ip_address_regex = /^([0-9]{1,3}[.][0-9]{1,3}[.][0-9]{1,3}[.][0-9]{1,3})$/
 
@@ -45,7 +38,6 @@ if input_string.match(ip_address_regex)
     else
         puts "Not a valid IP address"
     end
-
 else
     puts "Not a valid IP address"
 end
