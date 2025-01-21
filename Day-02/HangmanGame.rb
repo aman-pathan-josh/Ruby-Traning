@@ -74,9 +74,9 @@ def hangman_game(random_int, score)
 
     guess_flag = false
 
-    for i in 0..word_length
-      if word_to_guess[i] == user_inp && guessed_word_array[i] == '_'
-        guessed_word_array[i] = user_inp.upcase
+    word_to_guess.split("").each_with_index do |letter, indx|
+      if letter == user_inp && guessed_word_array[indx] == '_'
+        guessed_word_array[indx] = user_inp.upcase
         letter_count += 1
         guess_flag = true
         break
