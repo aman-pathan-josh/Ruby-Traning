@@ -1,5 +1,5 @@
 module Company
-  def self.display_company_name
-    p "Company name is Josh Software"
+  def display_company_name
+    puts "Company name is Josh Software"
   end
 end
