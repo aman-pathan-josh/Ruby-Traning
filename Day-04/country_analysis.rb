@@ -18,8 +18,10 @@ require './war_fitness.rb'
 
 class Country
 
-  def initialize(country_name, gdp, states, army_strength, state_of_country, population)
-    @name = country_name
+  attr_reader :name, :gdp, :state_of_country, :army_strength
+
+  def initialize(name, gdp, states, army_strength, state_of_country, population)
+    @name = name
     @population = population
     @gdp = gdp
     @states = states
@@ -28,7 +30,7 @@ class Country
   end
 
   def diplay_country_data
-    puts "Country Name: #{@name}"
+    puts "Country Name: #{@name.capitalize}"
     puts "Population: #{@population}"
     puts "Number of States: #{@states}"
     puts "GDP: #{@gdp} million USD"
@@ -54,7 +56,7 @@ class CountryAnalysis
       Country.new("somalia", 7500, 6, 20000, "Underdeveloped", 17000000)
     ]
   end
-  # countries = [ "united states", "india", "china", "germany", "brazil", "afghanistan", "somalia"]
+
   def get_country_name
     puts "Enter Country Name:"
     while true
@@ -70,13 +72,7 @@ class CountryAnalysis
   def get_country_data
     country_name = get_country_name
 
-    # p @countries.find { |current_country| current_country.name == country_name }
-    
-    @countries.each do |country|
-      if country.name == country_name
-        country.diplay_country_data
-      end
-    end
+    country = @countries.find { |current_country| current_country.name == country_name }
 
     if country
       puts "\n---------------------------------------"
@@ -89,22 +85,23 @@ class CountryAnalysis
   def get_country_analysis
     country_name = get_country_name
 
-    country = @countries.find { |current_obj| current_obj.country_name.downcase == country_name }
+    country = @countries.find { |current_country| current_country.name.downcase == country_name }
+    
     if country
       puts '...............................................'
       print "\nData of Country #{country_name}:\n"
     
       print "\nIs Country eligible for Loan?\n"
-      print check_loan_eligibility(country.country_name.capitalize, country.gdp)
+      print check_loan_eligibility(country.name.capitalize, country.gdp)
       print "\n"
     
       print "\nCan Country have a seat in United Nations Security Council?\n"
-      print check_un_eligibility(country.country_name.capitalize, country.gdp, country.state_of_country, country.army_strength)
+      print check_un_eligibility(country.name.capitalize, country.gdp, country.state_of_country, country.army_strength)
       print "\n"
 
-      # print "\nCan Country Win a War?\n"
-      # print CountryWarFitness.check_war_win_chances(country_name.capitalize, country[:army_strength])
-      # print "\n"
+      print "\nCan Country Win a War?\n"
+      print CountryWarFitness.check_war_win_chances(country_name.capitalize, country.army_strength)
+      print "\n"
         
     else
       puts "Country Not Found!"
