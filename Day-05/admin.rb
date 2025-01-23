@@ -20,7 +20,6 @@ class Admin
 
 end
 
-
 # Company name is Josh Software
 # Manager Details-
 # Name: John
