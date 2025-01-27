@@ -121,7 +121,7 @@ class HangmanGame
         break if level_check == 0
 
         level += 1
-        if level < 5
+        if level <= 5
           print "\nDo you want to Continue Game [Yes/No]?\n"
           choice = gets.chomp.downcase
         end

@@ -1,4 +1,6 @@
 class Car
+  attr_accessor :model
+
   def initialize(brand, model, year)
     @brand = brand
     @model = model
@@ -6,25 +8,9 @@ class Car
     @engine_number = generate_engine_number
   end
 
-  def model
-    @model
-  end
-
-  def model=(new_model)
-    @model = new_model
-  end
-
   def display_details
     "Car Details:\nBrand: #{@brand}, Model: #{@model}, Year: #{@year}"
   end
-
-  private
-
-  def generate_engine_number
-    "ENG-#{@model}-#{rand(100..1000)}"
-  end
-
-  public
 
   def display_engine_number
     "Car Engine Number: #{@engine_number}"
@@ -32,6 +18,12 @@ class Car
 
   def self.car_class_method
     "This is the class method."
+  end
+
+  private
+
+  def generate_engine_number
+    "ENG-#{@model}-#{rand(100..1000)}"
   end
 end
 
