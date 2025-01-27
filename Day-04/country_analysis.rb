@@ -15,29 +15,7 @@
 require './loan_eligibility.rb'
 require './un_eligibility.rb'
 require './war_fitness.rb'
-
-class Country
-
-  attr_reader :name, :gdp, :state_of_country, :army_strength
-
-  def initialize(name, gdp, states, army_strength, state_of_country, population)
-    @name = name
-    @population = population
-    @gdp = gdp
-    @states = states
-    @army_strength = army_strength
-    @state_of_country = state_of_country
-  end
-
-  def diplay_country_data
-    puts "Country Name: #{@name.capitalize}"
-    puts "Population: #{@population}"
-    puts "Number of States: #{@states}"
-    puts "GDP: #{@gdp} million USD"
-    puts "Army Strength: #{@army_strength} Active Troops"
-    puts "State of Country: #{@state_of_country}"
-  end
-end
+require './country.rb'
 
 class CountryAnalysis
 
@@ -140,30 +118,6 @@ class CountryAnalysis
 end
  
 CountryAnalysis.new.check_eligibility
-
-
-# country_name = Country.new.get_country_name
-        # @country_data.each do |country|
-        #   if country[:country_name] == country_name
-        #     puts '...............................................'
-        #     print "\nData of Country #{country_name}:\n"
-          
-        #     current_country = Country.new
-        #     print "\nIs Country eligible for Loan?\n"
-        #     print current_country.check_loan_eligibility(country_name, country[:gdp])
-        #     print "\n"
-          
-        #     print "\nCan Country have a seat in United Nations Security Council?\n"
-        #     print current_country.check_un_eligibility(country_name, country[:gdp], country[:state_of_country], country[:army_strength])
-        #     print "\n"
-              
-            # print "\nCan Country Win a War?\n"
-            # print CountryWarFitness.check_war_win_chances(country_name, country[:army_strength])
-            # print "\n"
-            
-        #   end
-        # end
-
 
 ## Output
 
